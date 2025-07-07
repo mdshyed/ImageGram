@@ -5,7 +5,7 @@ import { DB_URL } from "./serverConfig.js";
 export default async function connectDB(){
     try{
          await mongoose.connect(DB_URL)
-         console.log("mongoose connected")
+         console.log("mongoDB connected")
     }
     catch(error){
         console.log("mongoose connection failed")
