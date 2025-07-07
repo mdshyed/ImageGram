@@ -1,11 +1,13 @@
-import aws from "aws-sdk";
-import serverConfig from "./serverConfig.js";
+import { S3Client } from "@aws-sdk/client-s3";
 
-const s3 = new AWS.S3({
 
-    region: serverConfig.AWS_REGION,
-    accessKeyId: serverConfig.AWS_ACCESS_KEY_ID,
-    secretAccessKey: serverConfig.AWS_SECRET_ACCESS_KEY
+import { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION} from "./serverConfig.js";
+
+ export const s3 = new S3Client({
+
+    region: AWS_REGION,
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    
 });
 
-export default s3
